@@ -67,7 +67,7 @@ $canusettings  settings passed to canu, e.g., " "-p $canuprefix -d
 canuworkdirectory genomeSize=estgenomesize usegrid=false
 correctedErrorRate=0.105 -nanopore-raw"
 
-$canuworkstem	path to and base name of canuÕs working directories, of which
+$canuworkstem	path to and base name of canu's working directories, of which
 there is one per cycle. Example:
 "/scratch/halstead/c/ccrane/slagtests/Zeahistonedeacetylasescanuwork"
 
