@@ -48,6 +48,9 @@ configTraesCS1A01G397600formanual.cfg
 Phrap assembly with read retrieval based on bitscore:
 configTraesCS1A01G397600forbitscore.cfg
 
+See also the sister branch, benchmark, for configuration files and invocations of SLAG, aTRAM2, and SRAssembler that were
+used in a benchmarking study of these three programs.
+
 Settable parameters and allowed values or types in configuration files
 include:
 
