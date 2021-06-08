@@ -1,4 +1,4 @@
-	SLAG is an iterative targeted assembly pipeline that is strategically
+SLAG is an iterative targeted assembly pipeline that is strategically
 similar to aTRAM2* but offers a different set of assemblers and can produce
 assemblies at low read coverage. At the first cycle, one or more protein or
 nucleotide seeding sequences are BLAST aligned to a database of reads. Matching
@@ -8,7 +8,7 @@ of blast-retrieve-assemble-screen. SLAG currently can use CAP3, phrap, SPAdes,
 canu, and Unicycler, and it can fragment long reads for assembly with CAP3 or
 phrap when coverage is insufficient for canu or Unicycler.
 
-	The current edition of SLAG is localassembly1115.pl, which takes a
+The current edition of SLAG is localassembly1115.pl, which takes a
 single argument, a configuration file that specifies up to 40 parameter values.
 Non-comment lines in this file have the form "$variable = $value" for example,
 "$blastexe = "/bin/blastn";" without the outer quotes. Comment lines begin with
@@ -21,7 +21,7 @@ attemptedaccs1023A_1119.txt accs1023AmatchinIWGSPacciostats1202.txt
 accs1023AinIWGSPacciobrief1202.txt /scratch/lustreC/c/ccrane
 1023A_extractedIWGSPseqs".
 
-	Several configuration files are provided here as examples for
+Several configuration files are provided here as examples for
 particular read lengths and assemblers:
 
 SPAdes assembly of short reads: Zeahexokinasespureslagbm.cfg
@@ -48,7 +48,7 @@ configTraesCS1A01G397600formanual.cfg
 Phrap assembly with read retrieval based on bitscore:
 configTraesCS1A01G397600forbitscore.cfg
 
-	Settable parameters and allowed values or types in configuration files
+Settable parameters and allowed values or types in configuration files
 include:
 
 $assembler   "unicycler", "canu", "cap3", "phrap", "spades"
@@ -67,7 +67,7 @@ $canusettings  settings passed to canu, e.g., " "-p $canuprefix -d
 canuworkdirectory genomeSize=estgenomesize usegrid=false
 correctedErrorRate=0.105 -nanopore-raw"
 
-$canuworkstem	path to and base name of canu’s working directories, of which
+$canuworkstem	path to and base name of canu√ïs working directories, of which
 there is one per cycle. Example:
 "/scratch/halstead/c/ccrane/slagtests/Zeahistonedeacetylasescanuwork"
 
