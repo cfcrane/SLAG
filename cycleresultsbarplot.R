@@ -1,0 +1,5 @@
+H <- c(15.6, 11.2, 4.4, 0.1, 21, 21, 21, 21)
+N <- c("63.4x", "31.6x", "15.8x", "7.9x", "63.4x", "31.6x", "15.8x", "7.9x")
+pdf(file="cyclescompletedbarplot.pdf", height = 4, width = 4)
+barplot(H, names.arg=N, xlab="aTRAM                       SLAG", ylab="cycles completed", col="#555555", main="Mean Cycles Completed", border="#555555", cex.names=0.6)
+dev.off()
