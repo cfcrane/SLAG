@@ -116,7 +116,6 @@ order in @manarray, but SLAG will run even if they are not.  Option "population"
 takes reads from the list of ascending e-values until all reads used in the previous 
 cycle have been chosen.  Any additional reads to be assembled in the current cycle 
 must have an e-value <= the largest e-value taken in the previous cycle.
-
 	Option "all" (along with setting $minprogress to a small positive number) 
 makes SLAG behave like aTRAM2, while option "increment" allows the longest 
 contig length to fluctuate and generally has produced the longest contigs with the 
