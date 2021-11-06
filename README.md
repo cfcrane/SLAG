@@ -1,3 +1,4 @@
+Description:
 	SLAG is a local assembly program that is strategically similar to aTRAM2 (Allen 
 et al., 2018, Evolutionary Bioinformatics 14: 1-4).  However, SLAG uses a different 
 set of assemblers (canu, CAP3, phrap, SPAdes, Unicycler) and can handle low read 
