@@ -23,7 +23,6 @@ Singularity-containerized SLAG.sif that carries all the dependencies within it. 
 containerized form is more portable and likely to outlast obsolescence of SLAG's 
 current dependencies.  However, because of a licensing restriction, the 
 containerized executable does not run the phrap assembler.
-
 	Before you begin, SLAG requires a bit of preparation.  You are presumed to 
 have a fasta or fastq file(s) of reads and a fasta file of one or more founding 
 nucleotide or protein sequences.  SLAG.pl requires access to blast and at least one of 
@@ -34,18 +33,15 @@ include the program's location.  With either SLAG.pl or SLAG.sif, you will need 
 makeblastdb to make a blastable database of your reads.  If you start with paired-
 end fastq files, you will need to copy and convert them to fasta before preparing 
 separate forward- and reverse-read databases.
-
 	Invoking SLAG is simple:
 	./SLAG.pl configuration_file
 or, if your system supports Singularity:
 	./SLAG.sif configuration file
-	
 	Setting up the configuration file is not so simple.  There is expectedly a 
 different configuration file for every run of SLAG; the configuration file is the only 
 way for the user to direct SLAG for each specific local assembly.  Because SLAG runs 
 often last for hours, SLAG will usually be invoked within a shell script or at least a 
 Slurm sbatch command.
-
         Note for using SLAG.sif: This container can see /home and /scratch directories
  in the external (host) filesystem.  This includes all subdirectories under the external 
 /scratch.  If your blastable databases and reads are in some directory other than 
@@ -58,7 +54,6 @@ $value;" without the quotes, i.e., a series of assignment statements in perl.  S
 59 settable parameters.  Typically the configuration file will define 25 to 30 
 parameters, depending greatly on which local assembler is to be used and whether 
 an assembly of long reads is being attempted from shallow read depth.
-
 	Users are encouraged to use one of the 24 template configuration files 
 provided with this distribution in subdirectory slagbase/templates.  An ancillary 
 Perl script, setupSLAGconfigurations.pl, can substitute user-supplied file names into 
@@ -68,7 +63,6 @@ assemblers.  Since there are 59 settable parameters, many combinations of values
 have never been tested, and some are internally inconsistent.
 
 Usage of setupSLAGconfigurations.pl:
-
 	./setupSLAGconfigurations.pl $templatefile $newfile AAAA=$assemblername 
 DDDD=$databasename ...
 
