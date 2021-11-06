@@ -11,6 +11,10 @@ Charles F. Crane, Christie E. Williams, Jill Nemacheck, Subhashree Subramanyam,
 and Stephen B. Goodwin. [expectedly 2022]  SLAG: A Program for Seeded Local 
 Assembly of Genes in Complex Genomes.  Molecular Ecology Resources xx: xx-xx.
 
+Acknowledgement:
+	I thank Lev Gorenstein of Purdue University Research and Academic Computing 
+for writing and building SLAG.sif, the Singularity container for SLAG.pl.
+
 Installation:
 	Please see the INSTALL.md file in this distribution.  Basically, one downloads 
 the distribution file SLAGball.tgz, puts it where SLAG should go, uncompresses it, 
