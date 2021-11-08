@@ -9,6 +9,7 @@ Instructions to install SLAG
     Run "tar -xzf SLAGball.tgz" to expand the directory tree. Its root, slagbase, contains SLAG.pl, SLAG.sif, and 
     setupSLAGconfigurations.pl. SLAG.sif is a Singularity container that can run SLAG.pl. Subdirectory templates contains
     24 templates for configuration files, which are the way to communicate file names and settings to SLAG.pl or SLAG.sif.
+    
     Subdirectory testcfg contains 24 populated configuration files and 24 shell scripts to validate a successful download 
     and function on your system. These shell scripts are meant to be executed from the testout subdirectory. For example, 
     running ../testcfg/runCNTLRcanuSLAGtest.sh tests the container-included canu assembler with a test database and test 
