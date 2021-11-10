@@ -15,11 +15,11 @@ SLAG:
 * is more robust than aTRAM2, especially at lower coverage and when SLAG uses incremental addition of reads to the set to be assembled
 
 ### System requirements
-Linux for full functionality, Mac OS X for limited functionality.
-At least 4 cores and 8 Gb memory.  More are better for large read datasets.
-The minimum requirements to run SLAG have not been investigated systematically.
-SLAG.pl requires installed blast and at least one of [cap3](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [phrap](http://www.phrap.org/phredphrapconsed.html), [SPAdes](https://github.com/ablab/spades), [canu](https://github.com/marbl/canu), [Unicycler](https://github.com/rrwick/Unicycler), [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), or [Racon](https://github.com/lbcb-sci/racon).
-SLAG.sif requires Singularity but is independent of installed blast, cap3, SPAdes, canu, Unicycler, bowtie2, or Racon.
+* Linux for full functionality, Mac OS X for limited functionality.
+* At least 4 cores and 8 Gb memory.  More are better for large read datasets.
+* The minimum requirements to run SLAG have not been investigated systematically.
+* SLAG.pl requires installed blast and at least one of [cap3](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [phrap](http://www.phrap.org/phredphrapconsed.html), [SPAdes](https://github.com/ablab/spades), [canu](https://github.com/marbl/canu), [Unicycler](https://github.com/rrwick/Unicycler), [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), or [Racon](https://github.com/lbcb-sci/racon).
+* SLAG.sif requires Singularity but is independent of installed blast, cap3, SPAdes, canu, Unicycler, bowtie2, or Racon.
 
 ### Installation
 Please see the INSTALL.md file in this distribution. The general user should download the distribution file SLAGball.tgz from the releases section of this page, put it where SLAG should go, uncompress it, and untar it. One then has the option to add this path to the user's $PATH.  The copy of SLAG.pl below README.md is available for cloning and further development.
