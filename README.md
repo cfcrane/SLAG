@@ -46,14 +46,12 @@ Setting up the configuration file is not so simple. There is expectedly a differ
 ⚠️ Note for using `SLAG.sif`: This container can see `/home` and `/scratch` directories in the external (host) filesystem. This includes all subdirectories under the external `/scratch`. If your blastable databases and reads are in some directory $outsidedir that is not rooted in `/scratch` or `/home` on the host, you will have to use singularity run -B: `singularity run -B $outsidedir:/scratch SLAG.sif $configurationfile` .
 
 #### Structure of the configuration file
-The configuration file is a series of statements of the form 
+The configuration file is a series of Perl assignment statements of the form 
 ```
 $parameter1 = $value1;
 $parameter2 = $value2;
-```
-without any quotes, i.e., a series of assignment statements in perl. 
-
-SLAG has 59 settable parameters. Typically the configuration file will define 25 to 30 parameters, depending greatly on which local assembler is to be used and whether an assembly of long reads is being attempted from shallow read depth. 
+``` 
+SLAG has 59 settable parameters. Typically the configuration file will define 25 to 30 parameters, depending greatly on which local assembler is to be used, whether contigs are to be polished, and whether an assembly of long reads is being attempted from shallow read depth. 
 
 Users are **strongly encouraged** to use one of the 24 template configuration files provided with this release in subdirectory `slagbase/templates`. These templates cover the common combinations of read length, read coverage, and assembler.  An ancillary Perl script, `setupSLAGconfigurations.pl`, can substitute user-supplied file names into a copy of the template to make a run-specific configuration file. 
 
