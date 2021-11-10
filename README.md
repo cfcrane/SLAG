@@ -18,7 +18,7 @@ SLAG:
 * Linux for full functionality, Mac OS X for limited functionality.
 * At least 4 cores and 8 Gb memory.  More are better for large read datasets.
 * The minimum requirements to run SLAG have not been investigated systematically.
-* SLAG.pl requires installed blast and at least one of [cap3](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [phrap](http://www.phrap.org/phredphrapconsed.html), [SPAdes](https://github.com/ablab/spades), [canu](https://github.com/marbl/canu), [Unicycler](https://github.com/rrwick/Unicycler), [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), or [Racon](https://github.com/lbcb-sci/racon).
+* SLAG.pl requires installed [blast](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) and at least one of [cap3](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [phrap](http://www.phrap.org/phredphrapconsed.html), [SPAdes](https://github.com/ablab/spades), [canu](https://github.com/marbl/canu), [Unicycler](https://github.com/rrwick/Unicycler), [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), or [Racon](https://github.com/lbcb-sci/racon).
 * SLAG.sif requires Singularity but is independent of installed blast, cap3, SPAdes, canu, Unicycler, bowtie2, or Racon.
 
 ### Installation
