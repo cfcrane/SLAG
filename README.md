@@ -14,16 +14,23 @@ SLAG:
 * is about as fast as aTRAM2, although either SLAG or aTRAM2 can be up to 15 times faster than the other for particular inputs
 * is more robust than aTRAM2, especially at lower coverage and when SLAG uses incremental addition of reads to the set to be assembled
 
+### System requirements
+Linux for full functionality, Mac OS X for limited functionality.
+At least 4 cores and 8 Gb memory.  More are better for large read datasets.
+The minimum requirements to run SLAG have not been investigated systematically.
+SLAG.pl requires installed blast and at least one of [cap3](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [phrap](http://www.phrap.org/phredphrapconsed.html), [SPAdes](https://github.com/ablab/spades), [canu](https://github.com/marbl/canu), [Unicycler](https://github.com/rrwick/Unicycler), [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), or [Racon](https://github.com/lbcb-sci/racon).
+SLAG.sif requires Singularity but is independent of installed blast, cap3, SPAdes, canu, Unicycler, bowtie2, or Racon.
+
 ### Installation
-Please see the INSTALL.md file in this distribution. Basically, one downloads the distribution file SLAGball.tgz from the releases section of this page, puts it where SLAG should go, uncompresses it, and untars it. One then has the option to add this path to the user's $PATH.
+Please see the INSTALL.md file in this distribution. The general user should download the distribution file SLAGball.tgz from the releases section of this page, put it where SLAG should go, uncompress it, and untar it. One then has the option to add this path to the user's $PATH.  The copy of SLAG.pl below README.md is available for cloning and further development.
 
 ### Usage
 This distribution supplies two SLAG executables: a "free-living" `SLAG.pl` that requires the user to know the file locations of various dependencies, and a Singularity-containerized `SLAG.sif` that carries all the dependencies within it.
 
 The containerized form is more portable and likely to outlast obsolescence of SLAG's current dependencies. However, because of a licensing restriction, the containerized executable ⚠️ **does not** run the phrap assembler. 
 
-Before you begin, SLAG requires some preparation. You are presumed to have a
-* fasta or fastq file(s) of reads, and 
+Before you begin, SLAG requires some preparation. You are presumed to have 
+* a fasta or fastq file(s) of reads, and 
 * a fasta file of one or more founding nucleotide or protein sequences. 
  
 SLAG.pl requires access to `blast` and at least one of these programs: [`CAP3`](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [`phrap`](http://www.phrap.org/phredphrapconsed.html), [`SPAdes`](https://github.com/ablab/spades), [`canu`](https://github.com/marbl/canu), [`Unicycler`](https://github.com/rrwick/Unicycler), and [`Racon`](https://github.com/lbcb-sci/racon). You will either need to know the fully qualified location of these programs in your filesystem, or have access to a working "module load" command that can modify your `$PATH` to include the program's location. 
@@ -75,7 +82,7 @@ Regardless of the assembler, SLAG will iterate through some number of cycles of 
 | $extincrement | The maximum number of additional matching reads to include at each cycle after the first, if $extractionoption is set to "increment". All matching reads are assembled at the first cycle. A good starting value for $extincrement is the read depth.|
 | $extractionoption | The method to select reads to be assembled. The choices are "all", "bitscore", "increment", "manual", and "population". In each cycle of SLAG, a blast alignment returns a list of read identifiers in ascending order of e-value, i.e., the closest alignments are at the top. <br/><br/>Option "all" causes SLAG to assemble all matching reads, so that the number of reads used is determined by the blast e-value.<br/><br/>Option "bitscore" uses only matching reads that exceed a bitscore value specified by $minbitscore. <br/><br/>Option "increment" causes a maximum of $extincrement additional reads from the top of the list to be assembled at each cycle. <br/><br/>With option "manual", the number of reads to be assembled is set by the user, and this number can vary among cycles. The values are set as an array @manarray, for example by @manarray = (30, 40, 50, 60, 70), where the numbers within the array are chosen to try to find a maximum contig length. It makes sense that the values are in ascending order in @manarray, but SLAG will run even if they are not. <br/><br/>Option "population" takes reads from the list of ascending e-values until all reads used in the previous cycle have been chosen. Any additional reads to be assembled in the current cycle must have an e-value less than or equal to the largest e-value taken in the previous cycle. <br/><br/>Option "all" (along with setting $minprogress to a small positive number) makes SLAG behave like aTRAM2, while option "increment" allows the longest contig length to fluctuate and generally has produced the longest contigs with the deepest penetration of flanking repetitive sequence at some point during the run.  However, if $extincrement is too small, contig growth is noticeably slowed. |
 | $cycle | If SLAG is continuing a previous run, this is the cycle number for this run to begin with. It should be <= $maxcycle. If SLAG is not continuing a previous run, do not set $cycle. |
-| $foundingfile | If SLAG is continuing a previous run, this is the *subset.contigs file from the last completed cycle of the previous run. If SLAG is not continuing a previous run, do not set $foundingfile. |
+| $foundingfile | If SLAG is continuing a previous run, this is the *subset.contigs* file from the last completed cycle of the previous run. If SLAG is not continuing a previous run, do not set $foundingfile. |
 | $longread | Choice of a read-fragmentation method to enable long reads to be assembled with cap3 or phrap when read depth is too shallow to run canu or unicycler. Meaningful values are 1 for single fragmentation and 2 for double, staggered fragmentation. Leaving $longread unset or specifying any other value does not result in any fragmentation. |
 | $maxcycle  | SLAG performs this number of cycles after the first cycle. For example, setting $maxcycle = 20 causes SLAG to go through a maximum of 21 cycles. Because of a hard-coded print statement in SLAG, the maximum allowed value is 39. |
 | $minbitscore | The minimum blast bitscore for accepting a read for assembly. This variable applies only if $extractionoption = "bitscore". |
