@@ -5,7 +5,7 @@
 SLAG is a local assembly program that is strategically similar to aTRAM2 (Allen et al., 2018, Evolutionary Bioinformatics 14: 1-4). However, SLAG uses a different set of assemblers ([`canu`](https://github.com/marbl/canu),
 [`CAP3`](https://faculty.sites.iastate.edu/xqhuang/cap3-and-pcap-sequence-and-genome-assembly-programs), [`phrap`](http://www.phrap.org/phredphrapconsed.html), [`SPAdes`](https://github.com/ablab/spades),  [`Unicycler`](https://github.com/rrwick/Unicycler)) and can handle low read depths where aTRAM2 fails to yield assemblies. The usual use cases will be mining promoters using EST or heterologous protein sequences, and mining alleles or paralogs or homeologs using nucleotide or protein sequences. 
 
-A manuscript describing SLAG and its local assemblies has been submitted to Molecular Ecology Resources: Charles F. Crane, Christie E. Williams, Jill Nemacheck, Subhashree Subramanyam, and Stephen B. Goodwin. [expectedly 2022] SLAG: A Program for Seeded Local Assembly of Genes in Complex Genomes. Molecular Ecology Resources xx: xx-xx.
+If you publish results using SLAG, please cite: Charles F. Crane, Jill A. Nemacheck, Subhashree Subramanyam, Christie E. Williams, and Stephen B. Goodwin. 2022. SLAG: A Program for Seeded Local Assembly of Genes in Complex Genomes. Molecular Ecology Resources 22(5): 1999-2017.   https://doi.org/10.1111/1755-0998.13580
 
 ### Features
 SLAG:
